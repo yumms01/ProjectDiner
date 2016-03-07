@@ -2,16 +2,19 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.tacademy.projectdiner">
 
+
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
+        android:name = ".Network.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name=".LoadingActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,9 +22,30 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LoadingActivity"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"></activity>
-        <activity android:name=".Other_Notice_Activity"></activity>
+            android:name=".MainActivity"
+            android:launchMode="singleTask"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ReservationPage.ScoreStar_Activity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ReservationPage.Reservation_Activity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".SlidingMenuPage.MyPageActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".LoginPage.LoginActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".LoginPage.FaceBook_Google_Activity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".LoginPage.Email_New_Activity" />
+        <activity
+            android:name=".LoginPage.InLoginActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".SlidingMenuPage.Introduce_Diner_Activity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

@@ -15,8 +15,13 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.tacademy.projectdiner.MainPage.MainFragment;
+import com.example.tacademy.projectdiner.SlidingMenuPage.Menu_Settings_Fragment;
+import com.example.tacademy.projectdiner.SlidingMenuPage.MyPageActivity;
+
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
+    // Drawerble Layout
     NavigationView menuView;
     DrawerLayout drawer;
 
@@ -24,13 +29,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        Intent intent = new Intent(this, LoadingActivity.class);
-        startActivity(intent);
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction()
+                    .add(R.id.container, new MainFragment())
+                    .commit();
+        }
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        // Draweble Menu
         drawer = (DrawerLayout)findViewById(R.id.drawer);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.drawer_open, R.string.drawer_close);
         drawer.setDrawerListener(toggle);
@@ -38,6 +46,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         menuView = (NavigationView)findViewById(R.id.navigation_menu);
         menuView.setNavigationItemSelectedListener(this);
+
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -47,16 +56,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         .setAction("Action", null).show();
             }
         });
+
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+
+        getSupportFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
     }
 
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.menu_mypage : {
-                getSupportFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
-//                getSupportFragmentManager().beginTransaction()
-//                        .replace(R.id.container, new MainFragment())
-//                        .commit();
+                startActivity(new Intent(MainActivity.this, MyPageActivity.class));
                 break;
             }
 
@@ -95,4 +109,5 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         return super.onOptionsItemSelected(item);
     }
+
 }
