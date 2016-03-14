@@ -3,63 +3,74 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
     <RelativeLayout
+        android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:id="@+id/relativeLayout">
+        android:layout_height="100dp">
+
         <ImageView
+            android:id="@+id/Local_Restaurant_icon"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/Local_Restaurant_icon"
-            android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:background="#d2d6ff"/>
+            android:layout_alignParentTop="true"
+            android:background="#d2d6ff" />
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true">
+            android:layout_alignParentStart="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Large_Text"
                 android:id="@+id/text_restaurant_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true" />
+                android:layout_centerHorizontal="true"
+                android:text="Large_Text"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffff" />
 
-            <TextView
+            <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Large_Text"
-                android:id="@+id/text_location"
                 android:layout_below="@+id/text_restaurant_name"
-                android:layout_toLeftOf="@+id/image_icon"
-                android:layout_toStartOf="@+id/image_icon" />
+                android:layout_centerHorizontal="true">
 
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:id="@+id/image_icon"
-                android:layout_alignBottom="@+id/text_menu"
-                android:layout_alignLeft="@+id/text_restaurant_name"
-                android:layout_alignStart="@+id/text_restaurant_name"
-                android:layout_below="@+id/text_restaurant_name"/>
+                <TextView
+                    android:id="@+id/text_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Large_Text"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="#ffffff" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Large_Text"
-                android:id="@+id/text_menu"
-                android:layout_below="@+id/text_restaurant_name"
-                android:layout_toRightOf="@+id/image_icon"
-                android:layout_toEndOf="@+id/image_icon" />
+                <ImageView
+                    android:id="@+id/image_icon"
+                    android:layout_width="4dp"
+                    android:layout_height="4dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_toRightOf="@+id/text_location"
+                    android:layout_toEndOf="@+id/text_location"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/procedure_1" />
+
+                <TextView
+                    android:id="@+id/text_menu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/image_icon"
+                    android:layout_toRightOf="@+id/image_icon"
+                    android:text="Large_Text"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="#ffffff" />
+            </RelativeLayout>
         </RelativeLayout>
     </RelativeLayout>
-
 </RelativeLayout>

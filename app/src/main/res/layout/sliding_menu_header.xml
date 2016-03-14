@@ -5,10 +5,10 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="134dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:background="#c6c4c4"
+        android:background="@drawable/hamburger_top_img"
         android:id="@+id/headerView">
 
         <ImageView
@@ -21,29 +21,31 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_marginTop="20dp"
-            android:background="#ff0000"
             android:layout_marginBottom="10dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_marginLeft="26dp"
+            android:layout_marginStart="26dp"
             android:text="염민호님"
             android:id="@+id/text_PersonName"
             android:layout_below="@+id/imageView2"
             android:layout_alignLeft="@+id/imageView2"
-            android:layout_alignStart="@+id/imageView2" />
+            android:layout_alignStart="@+id/imageView2"
+            android:textColor="#ffffff" />
 
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Edit"
-            android:id="@+id/button"
+            android:id="@+id/btn_edit"
             android:layout_toRightOf="@+id/text_PersonName"
             android:layout_alignBottom="@+id/text_PersonName"
             android:layout_toEndOf="@+id/text_PersonName"
-            android:layout_below="@+id/imageView2" />
+            android:layout_below="@+id/imageView2"
+            android:background="@drawable/edit" />
     </RelativeLayout>
 
 
@@ -58,12 +60,12 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_height="63dp"
             android:layout_centerVertical="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_weight="1"
-            android:background="#fca5a5">
+            android:background="@drawable/show">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -72,25 +74,25 @@
                 android:text="3"
                 android:id="@+id/text_ShowCount"
                 android:layout_centerHorizontal="true"
-                android:layout_margin="10dp"/>
+                android:layout_margin="10dp"
+                android:textColor="#ffffff" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="SHOW"
                 android:id="@+id/text_Show"
                 android:layout_below="@+id/text_ShowCount"
                 android:layout_centerHorizontal="true" />
         </RelativeLayout>
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_height="63dp"
             android:layout_centerVertical="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_weight="1"
-            android:background="#fca5a5">
+            android:background="@drawable/noshow">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -98,25 +100,25 @@
                 android:text="1"
                 android:id="@+id/text_NoShowCount"
                 android:layout_centerHorizontal="true"
-                android:layout_margin="10dp"/>
+                android:layout_margin="10dp"
+                android:textColor="#ffffff" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="NOSHOW"
                 android:id="@+id/text_NoShow"
                 android:layout_below="@+id/text_NoShowCount"
                 android:layout_centerHorizontal="true" />
         </RelativeLayout>
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_height="63dp"
             android:layout_centerVertical="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_weight="1"
-            android:background="#fca5a5">
+            android:background="@drawable/ranking">
 
             <RatingBar
                 android:id="@+id/ratingBar"
@@ -130,7 +132,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="등급"
                 android:id="@+id/text_Grade"
                 android:layout_below="@+id/ratingBar"
                 android:layout_centerHorizontal="true" />

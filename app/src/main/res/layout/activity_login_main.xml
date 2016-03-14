@@ -24,10 +24,11 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:id="@+id/imageView"
-        android:background="@mipmap/ic_launcher"
+        android:src="@mipmap/ic_launcher"
         android:layout_below="@+id/btn_cancel"
         android:layout_centerHorizontal="true" />
 
+    <!--<com.facebook.login.widget.LoginButton-->
     <Button
         android:layout_width="304dp"
         android:layout_height="50dp"
@@ -60,7 +61,7 @@
         android:id="@+id/image_line"
         android:layout_below="@+id/btn_email"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/or"
+        android:src="@drawable/or"
         android:layout_marginTop="30dp"/>
 
     <Button

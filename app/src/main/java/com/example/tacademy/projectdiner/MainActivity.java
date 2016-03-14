@@ -14,10 +14,14 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 
 import com.example.tacademy.projectdiner.MainPage.MainFragment;
+import com.example.tacademy.projectdiner.QrPage.QrActivity;
+import com.example.tacademy.projectdiner.QrPage.Qr_Fragment;
 import com.example.tacademy.projectdiner.SlidingMenuPage.Menu_Settings_Fragment;
-import com.example.tacademy.projectdiner.SlidingMenuPage.MyPageActivity;
+import com.example.tacademy.projectdiner.SlidingMenuPage.Change_MyPageActivity;
+import com.example.tacademy.projectdiner.SlidingMenuPage.MyPage_Fragment;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -35,6 +39,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     .commit();
         }
 
+        setTitle("");
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -47,15 +52,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         menuView = (NavigationView)findViewById(R.id.navigation_menu);
         menuView.setNavigationItemSelectedListener(this);
 
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        View headerView = menuView.getHeaderView(0);
+        Button btn = (Button)headerView.findViewById(R.id.btn_edit);
+        btn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, Change_MyPageActivity.class));
             }
         });
+
+
+//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+//            }
+//        });
 
     }
 
@@ -70,7 +84,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.menu_mypage : {
-                startActivity(new Intent(MainActivity.this, MyPageActivity.class));
+                getSupportFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.container, new MyPage_Fragment())
+                        .addToBackStack(null)
+                        .commit();
                 break;
             }
 
@@ -80,7 +98,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         .replace(R.id.container, new Menu_Settings_Fragment())
                         .addToBackStack(null)
                         .commit();
+                }
                 break;
+
+            case R.id.menu_qr : {
+
+                startActivity(new Intent(MainActivity.this, QrActivity.class));
             }
 
         }
@@ -103,7 +126,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.item) {
             return true;
         }
 

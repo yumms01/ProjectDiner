@@ -33,12 +33,4 @@
 
     </RelativeLayout>
 
-    <ImageView
-        android:id="@+id/image_check"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:src="@android:drawable/checkbox_on_background"
-        android:visibility="gone" />
-
 </FrameLayout>

@@ -1,0 +1,43 @@
+{
+  "project_info": {
+    "project_id": "projectdiner-1240",
+    "project_number": "436593755047",
+    "name": "ProjectDiner"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:436593755047:android:dff13d318559d1de",
+        "client_id": "android:com.example.tacademy.projectdiner",
+        "client_type": 1,
+        "android_client_info": {
+          "package_name": "com.example.tacademy.projectdiner",
+          "certificate_hash": []
+        }
+      },
+      "oauth_client": [],
+      "api_key": [],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "cloud_messaging_service": {
+          "status": 2,
+          "apns_config": []
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "google_signin_service": {
+          "status": 1
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "client_info": [],
+  "ARTIFACT_VERSION": "1"
+}

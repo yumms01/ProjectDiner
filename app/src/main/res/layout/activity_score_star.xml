@@ -3,41 +3,58 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ReservationPage.ScoreStar_Activity"
+    tools:context=".QrPage.ScoreStar_Activity"
     android:background="#3c3c3c">
 
+    <RelativeLayout
+        android:id = "@+id/RLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="73dp"
+        android:background="#1a1c27">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text = "별점주기"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:textColor="#ffffff"
+            android:id="@+id/textView7" />
+
+    </RelativeLayout>
+
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="건전한 예약 문화 조성에 도움을 주셔서 감사합니다."
         android:id="@+id/textView"
         android:layout_marginTop="119dp"
         android:textColor="#ffffff"
-        android:layout_alignRight="@+id/ratingBar"
-        android:layout_alignEnd="@+id/ratingBar"
-        android:layout_alignLeft="@+id/ratingBar"
-        android:layout_alignStart="@+id/ratingBar"
-        android:textSize="23dp" />
+        android:textSize="23dp"
+        android:gravity="center"
+        android:layout_below="@+id/RLayout1"
+        android:layout_centerHorizontal="true" />
 
     <RatingBar
         android:id="@+id/ratingBar"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:numStars="5"
+        android:numStars="4"
         android:layout_below="@+id/textView"
-        android:layout_centerHorizontal="true"
-        android:paddingTop="60dp"
-        android:paddingBottom="82dp" />
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="82dp"
+        android:layout_alignLeft="@+id/btn_ok"
+        android:layout_alignStart="@+id/btn_ok"
+        android:layout_alignRight="@+id/btn_ok"
+        android:layout_alignEnd="@+id/btn_ok" />
 
     <Button
         android:layout_width="232dp"
         android:layout_height="62dp"
-        android:text="확인"
         android:id="@+id/btn_ok"
+        android:background="@drawable/check_button"
         android:layout_below="@+id/ratingBar"
-        android:layout_alignRight="@+id/ratingBar"
-        android:layout_alignEnd="@+id/ratingBar"
-        android:layout_alignLeft="@+id/ratingBar"
-        android:layout_alignStart="@+id/ratingBar" />
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
