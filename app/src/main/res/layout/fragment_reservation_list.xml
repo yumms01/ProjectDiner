@@ -1,4 +1,4 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,28 +10,534 @@
         android:layout_height="match_parent"
         android:layout_below="@+id/linearLayout"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true">
 
-        <ListView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/listView"
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_above="@+id/btn_reservation"/>
+            android:layout_above="@+id/btn_reservation">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:id="@+id/layout_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="7dp"
+                    android:orientation="horizontal"
+                    android:background="@drawable/list">
+
+                    <ImageView
+                        android:id="@+id/image_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginStart="20dp"
+                        android:src="@drawable/list_circle" />
+
+                    <TextView
+                        android:id="@+id/text_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@+id/image_icon"
+                        android:layout_toRightOf="@+id/image_icon"
+                        android:text="시간"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id = "@+id/Rlayout_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/layout_time"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="7dp"
+                    android:visibility="gone">
+
+                    <RelativeLayout
+                        android:id = "@+id/Rlayout1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <Button
+                            android:id="@+id/downButton1"
+                            android:layout_width="72dp"
+                            android:layout_height="23dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_below="@+id/textView1"
+                            android:background="@drawable/year_m" />
+
+                        <TextView
+                            android:id="@+id/textView1"
+                            android:layout_width="72dp"
+                            android:layout_height="40dp"
+                            android:layout_alignEnd="@+id/upButton1"
+                            android:layout_alignRight="@+id/upButton1"
+                            android:layout_below="@+id/upButton1"
+                            android:background="#d7d7d7"
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:text="2016년">
+
+                        </TextView>
+
+                        <Button
+                            android:id="@+id/upButton1"
+                            android:layout_width="72dp"
+                            android:layout_height="23dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:background="@drawable/year_plus" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id = "@+id/Rlayout2"
+                        android:layout_toRightOf="@+id/Rlayout1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <Button
+                            android:id="@+id/downButton2"
+                            android:layout_width="51dp"
+                            android:layout_height="23dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_below="@+id/textView2"
+                            android:background="@drawable/m_button" />
+
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="51dp"
+                            android:layout_height="40dp"
+                            android:layout_alignEnd="@+id/upButton2"
+                            android:layout_alignRight="@+id/upButton2"
+                            android:layout_below="@+id/upButton2"
+                            android:background="#d7d7d7"
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:text="1월">
+
+                        </TextView>
+
+                        <Button
+                            android:id="@+id/upButton2"
+                            android:layout_width="51dp"
+                            android:layout_height="23dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:background="@drawable/plus_button" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id = "@+id/Rlayout3"
+                        android:layout_toRightOf="@+id/Rlayout2"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <Button
+                            android:id="@+id/downButton3"
+                            android:layout_width="51dp"
+                            android:layout_height="23dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_below="@+id/textView3"
+                            android:background="@drawable/m_button" />
+
+                        <TextView
+                            android:id="@+id/textView3"
+                            android:layout_width="51dp"
+                            android:layout_height="40dp"
+                            android:layout_alignEnd="@+id/upButton3"
+                            android:layout_alignRight="@+id/upButton3"
+                            android:layout_below="@+id/upButton3"
+                            android:background="#d7d7d7"
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:text="1일">
+
+                        </TextView>
+
+                        <Button
+                            android:id="@+id/upButton3"
+                            android:layout_width="51dp"
+                            android:layout_height="23dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:background="@drawable/plus_button" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id = "@+id/Rlayout4"
+                        android:layout_toRightOf="@+id/Rlayout3"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <Button
+                            android:id="@+id/downButton4"
+                            android:layout_width="51dp"
+                            android:layout_height="23dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_below="@+id/textView4"
+                            android:background="@drawable/m_button" />
+
+                        <TextView
+                            android:id="@+id/textView4"
+                            android:layout_width="51dp"
+                            android:layout_height="40dp"
+                            android:layout_alignEnd="@+id/upButton4"
+                            android:layout_alignRight="@+id/upButton4"
+                            android:layout_below="@+id/upButton4"
+                            android:background="#d7d7d7"
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:text="1시">
+
+                        </TextView>
+
+                        <Button
+                            android:id="@+id/upButton4"
+                            android:layout_width="51dp"
+                            android:layout_height="23dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:background="@drawable/plus_button" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id = "@+id/Rlayout5"
+                        android:layout_toRightOf="@+id/Rlayout4"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <Button
+                            android:id="@+id/downButton5"
+                            android:layout_width="51dp"
+                            android:layout_height="23dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_below="@+id/textView5"
+                            android:background="@drawable/m_button" />
+
+                        <TextView
+                            android:id="@+id/textView5"
+                            android:layout_width="51dp"
+                            android:layout_height="40dp"
+                            android:layout_alignEnd="@+id/upButton5"
+                            android:layout_alignRight="@+id/upButton5"
+                            android:layout_below="@+id/upButton5"
+                            android:background="#d7d7d7"
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:text="1분">
+
+                        </TextView>
+
+                        <Button
+                            android:id="@+id/upButton5"
+                            android:layout_width="51dp"
+                            android:layout_height="23dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:background="@drawable/plus_button" />
+
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/layout_person"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="7dp"
+                    android:orientation="horizontal"
+                    android:background="@drawable/list"
+                    android:layout_below="@+id/Rlayout_1">
+
+                    <ImageView
+                        android:id="@+id/image_icon2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginStart="20dp"
+                        android:src="@drawable/list_circle" />
+
+                    <TextView
+                        android:id="@+id/text_person2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@+id/image_icon2"
+                        android:layout_toRightOf="@+id/image_icon2"
+                        android:text="인원"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id = "@+id/Rlayout_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/layout_person"
+                    android:layout_marginTop="7dp"
+                    android:visibility="gone">
+
+                    <RelativeLayout
+                        android:id="@+id/Rlayout11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+
+                        <Button
+                            android:id="@+id/downButton11"
+                            android:layout_width="33dp"
+                            android:layout_height="42dp"
+                            android:layout_alignBottom="@+id/textView11"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:background="@drawable/people_ma" />
+
+                        <TextView
+                            android:id="@+id/textView11"
+                            android:layout_width="60dp"
+                            android:layout_height="42dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginEnd="3dp"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_marginStart="3dp"
+                            android:layout_toEndOf="@+id/downButton11"
+                            android:layout_toRightOf="@+id/downButton11"
+                            android:background="#d7d7d7"
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:text="0">
+
+                        </TextView>
+
+                        <Button
+                            android:id="@+id/upButton11"
+                            android:layout_width="33dp"
+                            android:layout_height="42dp"
+                            android:layout_alignTop="@+id/downButton11"
+                            android:layout_toEndOf="@+id/textView11"
+                            android:layout_toRightOf="@+id/textView11"
+                            android:background="@drawable/people_plus" />
+
+                        <TextView
+                            android:id="@+id/textView111"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/downButton11"
+                            android:layout_centerHorizontal="true"
+                            android:text="성인"
+                            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/Rlayout12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginStart="30dp"
+                        android:layout_toEndOf="@+id/Rlayout11"
+                        android:layout_toRightOf="@+id/Rlayout11">
+
+
+                        <Button
+                            android:id="@+id/downButton12"
+                            android:layout_width="33dp"
+                            android:layout_height="42dp"
+                            android:layout_alignBottom="@+id/textView12"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:background="@drawable/people_ma" />
+
+                        <TextView
+                            android:id="@+id/textView12"
+                            android:layout_width="60dp"
+                            android:layout_height="42dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginEnd="3dp"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_marginStart="3dp"
+                            android:layout_toEndOf="@+id/downButton12"
+                            android:layout_toRightOf="@+id/downButton12"
+                            android:background="#d7d7d7"
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:text="0">
+
+                        </TextView>
+
+                        <Button
+                            android:id="@+id/upButton12"
+                            android:layout_width="33dp"
+                            android:layout_height="42dp"
+                            android:layout_alignTop="@+id/downButton12"
+                            android:layout_toEndOf="@+id/textView12"
+                            android:layout_toRightOf="@+id/textView12"
+                            android:background="@drawable/people_plus" />
+
+                        <TextView
+                            android:id="@+id/textView222"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/downButton12"
+                            android:layout_centerHorizontal="true"
+                            android:text="어린이"
+                            android:textAppearance="?android:attr/textAppearanceMedium" />
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/layout_menu"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="7dp"
+                    android:orientation="horizontal"
+                    android:background="@drawable/list"
+                    android:layout_below="@+id/Rlayout_2">
+
+                    <ImageView
+                        android:id="@+id/image_icon3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginStart="20dp"
+                        android:src="@drawable/list_circle" />
+
+                    <TextView
+                        android:id="@+id/text_menu3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@+id/image_icon3"
+                        android:layout_toRightOf="@+id/image_icon3"
+                        android:text="메뉴"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id = "@+id/Rlayout_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/layout_menu"
+                    android:layout_marginTop="7dp"
+                    android:visibility="gone">
+
+                    <ListView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/listView" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/layout_request"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="7dp"
+                    android:orientation="horizontal"
+                    android:background="@drawable/list"
+                    android:layout_below="@+id/Rlayout_3">
+
+                    <ImageView
+                        android:id="@+id/image_icon4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginStart="20dp"
+                        android:src="@drawable/list_circle" />
+
+                    <TextView
+                        android:id="@+id/text_request4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@+id/image_icon4"
+                        android:layout_toRightOf="@+id/image_icon4"
+                        android:text="요청사항"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id = "@+id/Rlayout_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/layout_request"
+                    android:layout_marginTop="7dp"
+                    android:visibility="gone">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="91dp"
+                        android:id="@+id/text_request"
+                        android:background="@drawable/request_box"/>
+                </RelativeLayout>
+
+            </RelativeLayout>
+        </ScrollView>
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/btn_reservation"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_alignRight="@+id/listView"
-            android:layout_alignEnd="@+id/listView"
             android:background="@drawable/reservation_button" />
 
     </RelativeLayout>
 
-</FrameLayout>
+</RelativeLayout>

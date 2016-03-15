@@ -1,5 +1,6 @@
 package com.example.tacademy.projectdiner;
 
+import android.support.v4.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -15,10 +16,13 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.Toast;
 
+import com.example.tacademy.projectdiner.InLocalPage.InLocal_Tab1_Fragment;
 import com.example.tacademy.projectdiner.MainPage.MainFragment;
 import com.example.tacademy.projectdiner.QrPage.QrActivity;
 import com.example.tacademy.projectdiner.QrPage.Qr_Fragment;
+import com.example.tacademy.projectdiner.ReservationPage.Reservation_Activity;
 import com.example.tacademy.projectdiner.SlidingMenuPage.Menu_Settings_Fragment;
 import com.example.tacademy.projectdiner.SlidingMenuPage.Change_MyPageActivity;
 import com.example.tacademy.projectdiner.SlidingMenuPage.MyPage_Fragment;
@@ -26,8 +30,21 @@ import com.example.tacademy.projectdiner.SlidingMenuPage.MyPage_Fragment;
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     // Drawerble Layout
-    NavigationView menuView;
-    DrawerLayout drawer;
+    private NavigationView menuView;
+    private DrawerLayout drawer;
+    private InLocal_Tab1_Fragment inLocal_tab1_fragment;
+
+
+    public static final String EXTRA_MESSAGE = "region_id";
+
+    public void test(int regionId){
+        //InLocal_Tab1_Fragment tab1 = (InLocal_Tab1_Fragment)getFragmentManager().findFragmentById()
+        if(inLocal_tab1_fragment !=null){
+            inLocal_tab1_fragment.setId(regionId);
+        }else{
+            System.out.println("ta1 널입니다.");
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +55,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     .add(R.id.container, new MainFragment())
                     .commit();
         }
+
+        startActivity(new Intent(MainActivity.this, Reservation_Activity.class));
 
         setTitle("");
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -60,6 +79,22 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(new Intent(MainActivity.this, Change_MyPageActivity.class));
             }
         });
+
+//        Intent intent = getIntent();
+//        String message = intent.getStringExtra(EXTRA_MESSAGE);
+
+//        Toast.makeText(MainActivity.this, "message " + message, Toast.LENGTH_SHORT).show();
+
+        inLocal_tab1_fragment = new InLocal_Tab1_Fragment();
+//        Bundle extra = new Bundle();
+//
+//        extra.putInt(EXTRA_MESSAGE, Integer.parseInt(message));
+//        inLocal_tab1_fragment.setArguments(extra);
+
+
+//        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+//        ft.add(inLocal_tab1_fragment, "region_id");
+//        ft.commit();
 
 
 //        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
