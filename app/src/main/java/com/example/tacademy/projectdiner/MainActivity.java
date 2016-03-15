@@ -37,8 +37,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     public static final String EXTRA_MESSAGE = "region_id";
 
+
+    //InLocal_Tab1_Fragment tab1 = (InLocal_Tab1_Fragment)getFragmentManager().findFragmentById()
     public void test(int regionId){
-        //InLocal_Tab1_Fragment tab1 = (InLocal_Tab1_Fragment)getFragmentManager().findFragmentById()
         if(inLocal_tab1_fragment !=null){
             inLocal_tab1_fragment.setId(regionId);
         }else{
